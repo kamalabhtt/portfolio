@@ -41,7 +41,7 @@ const Navbar = () => {
         ))}
 
         {/* Download CV */}
-        <a href="/React_Internship_CV_Filled_Template (1)" download>
+        <a href="/cv" download>
           <li className="mt-3 md:mt-0 px-6 py-3 rounded-3xl bg-white text-[#465697] font-semibold text-base md:text-lg hover:bg-[#374c8a] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95">
             Download CV
           </li>

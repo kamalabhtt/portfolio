@@ -25,7 +25,7 @@ const Footer = () => {
             <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
               <MdOutlineEmail size={20} />
             </span>
-            <a href="mailto:bhattkamala85@gmail.com" className="hover:text-[#ffda79] transition">bhattkamala85@gmail.com</a>
+            <a href="mailto:kamalabhatt3213@gmail.com" className="hover:text-[#ffda79] transition">bkamalabhatt3213@gmail.com</a>
           </li>
           <li className="flex items-center gap-2">
             <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">

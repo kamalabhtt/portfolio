@@ -14,7 +14,7 @@ const Home = () => {
         </p>
         <div className="flex gap-4 justify-center md:justify-start">
           <a href="#contact" className="bg-[#465697] text-white py-2 px-4 md:py-3 md:px-6 rounded-3xl font-semibold text-sm md:text-lg hover:opacity-85 hover:scale-105 duration-300">Contact Me</a>
-          <a href="/React_Internship_CV_Filled_Template (1)" download className="border border-[#465697] text-[#465697] py-2 px-4 md:py-3 md:px-6 rounded-3xl font-semibold text-sm md:text-lg hover:bg-[#465697] hover:text-white duration-300">Download CV</a>
+          <a href="/cv" download className="border border-[#465697] text-[#465697] py-2 px-4 md:py-3 md:px-6 rounded-3xl font-semibold text-sm md:text-lg hover:bg-[#465697] hover:text-white duration-300">Download CV</a>
         </div>
       </div>
 
