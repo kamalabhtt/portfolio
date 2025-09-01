@@ -1,54 +1,46 @@
-import React from 'react'
-import AboutImg from "../../assets/about.png";
-import { IoArrowForward } from "react-icons/io5";
+import React from "react";
+import profileImg from "../../assets/image.png";
 
 const About = () => {
+  const skills = [
+    { title: "Frontend", items: "React, Next.js, TailwindCSS" },
+    { title: "Backend", items: "Node.js, Express, PHP, MYSQL, MongoDB" },
+    { title: "Tools", items: "Git, GitHub, VS Code, Figma" },
+    { title: "Soft Skills", items: "Problem Solving, Teamwork, Communication" },
+  ];
+
   return (
-    <div id="About" className="text-white md:flex overflow overflow-hidden items-center md:flex-wrap md:justify-center bg-black shadow-xl mx-0 md:mx-20 bg-opacity-30 rounded-lg p-12">
-      
-      <div>
-        <h2 className="text-2xl md:text-4xl font-bold">About</h2>
-        <div className="md:flex flex-wrap flex-col md:flex-row items-center">
-            <img className="md:h-80" src={AboutImg} alt="Abput img" />
+    <section id="about" className="bg-gray-900 text-white py-20 px-6 md:px-20">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* Left: Profile Photo */}
+        <div className="flex justify-center md:justify-start">
+          <img 
+        src={profileImg} 
+        alt="Kamala Bhatta" 
+        className="w-72 sm:w-96 md:w-[28rem] lg:w-[32rem] rounded-full shadow-2xl border-4 border-[#465697] object-cover" 
+        />
 
-            <ul>
-                <div className="flex gap-3 py-4">
-                    <IoArrowForward size={30} className="mt-1"/>
-
-                    <span className="w-96">
-                        <h1 className="text-xl md:text-2xl font-semibold leading-normal">Frontend Developer</h1>
-                        <p className="text-sm md:text-md leading-tight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, dicta voluptates iure voluptatem distinctio, architecto, excepturi molestiae voluptatibus odit exercitationem esse tempore aperiam eos illo praesentium laboriosam ut? Sit, veniam.</p>
-
-                    </span>
-                </div>
-                <div className="flex gap-3 py-4">
-                    <IoArrowForward size={30} className="mt-1"/>
-
-                    <span className="w-96">
-                        <h1 className="text-xl md:text-2xl font-semibold leading-normal">Backend Developer</h1>
-                        <p className="text-sm md:text-md leading-tight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, dicta voluptates iure voluptatem distinctio, architecto, excepturi molestiae voluptatibus odit exercitationem esse tempore aperiam eos illo praesentium laboriosam ut? Sit, veniam.</p>
-
-                    </span>
-                </div>
-                <div className="flex gap-3 py-4">
-                    <IoArrowForward size={30} className="mt-1"/>
-
-                    <span className="w-96">
-                        <h1 className="text-xl md:text-2xl font-semibold leading-normal">DataBase Developer</h1>
-                        <p className="text-sm md:text-md leading-tight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, dicta voluptates iure voluptatem distinctio, architecto, excepturi molestiae voluptatibus odit exercitationem esse tempore aperiam eos illo praesentium laboriosam ut? Sit, veniam.</p>
-
-                    </span>
-                </div>
-                
-            </ul>
         </div>
 
+        {/* Right: Text & Skills */}
+        <div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">About <span className="text-[#465697]">Me</span></h2>
+          <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
+            Hello! I’m <span className="font-semibold">Kamala Bhatta</span>, a passionate <span className="text-[#465697]">Full Stack Developer</span> who loves turning complex ideas into clean, maintainable digital solutions. I focus on user-first design and building applications that make an impact.
+          </p>
+          <h3 className="text-2xl font-semibold mb-4">Skills & Expertise</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {skills.map((skill, index) => (
+              <div key={index} className="bg-gray-800 p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                <h4 className="text-[#465697] font-bold text-lg mb-2">{skill.title}</h4>
+                <p className="text-gray-300 text-sm">{skill.items}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-// npm install react-icons arrow icon ko lagi
-
-
-export default About
+export default About;

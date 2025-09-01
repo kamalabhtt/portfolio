@@ -1,32 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { RiCloseLine, RiMenu2Line } from "@remixicon/react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleScrollTo = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); // close mobile menu after click
+    }
+  };
+
+  const menuItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "projects", label: "Projects" },
+    { id: "Footer", label: "Contact" },
+  ];
+
   return (
-    <nav className="flex flex-wrap justify-between md:items-center text-white px-10 pt-6 md:px-20 relative">
-      <span className="text-xl font-bold tracking-wide">Portfolio</span>
+    <nav className="fixed top-0 w-full z-50 px-6 md:px-20 py-3 md:py-4 flex justify-between items-center text-white bg-[#465697] shadow-md transition-all duration-300">
+      {/* Logo */}
+      <span className="text-xl md:text-2xl font-bold tracking-wide">Portfolio</span>
 
+      {/* Menu Items */}
+      <ul
+        className={`${
+          menuOpen ? "block" : "hidden"
+        } md:flex md:items-center gap-4 absolute md:static top-full left-0 w-full md:w-auto bg-[#465697] md:bg-transparent px-4 py-4 md:p-0 text-center`}
+      >
+        {menuItems.map((item) => (
+          <li
+            key={item.id}
+            className="cursor-pointer px-4 py-2 md:py-0 rounded-3xl hover:bg-[#374c8a] transition-all duration-300"
+            onClick={() => handleScrollTo(item.id)}
+          >
+            {item.label}
+          </li>
+        ))}
 
-      {/* Navigation links */}
-      <ul className={`${menuOpen ? "block" : "hidden"} mx-24 py-2 mt-4 font-semibold md:mt-5 bg-black px-2 rounded-xl bg-opacity-30 md:border-none text-center md:bg-transparent md:static md:mx-0 md:flex gap-6`}>
-        <a href="#About">
-          <li className="text-md transition-all duration-300 p-1 md:p-0">About</li>
-        </a>
-        <a href="#Experience">
-          <li className="text-md transition-all duration-300 p-1 md:p-0">Experience</li>
-        </a>
-        <a href="#Project">
-          <li className="text-md transition-all duration-300 p-1 md:p-0">Project</li>
-        </a>
-        <a href="#Footer">
-          <li className="text-md transition-all duration-300 p-1 md:p-0">Contact</li>
+        {/* Download CV */}
+        <a href="/React_Internship_CV_Filled_Template (1)" download>
+          <li className="mt-3 md:mt-0 px-6 py-3 rounded-3xl bg-white text-[#465697] font-semibold text-base md:text-lg hover:bg-[#374c8a] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95">
+            Download CV
+          </li>
         </a>
       </ul>
 
-      {/* Menu icon for small screens */}
-      <div className="md:hidden absolute right-10 top-6 transition-all duration-300">
+      {/* Mobile Menu Toggle */}
+      <div className="md:hidden">
         {menuOpen ? (
           <RiCloseLine size={30} onClick={() => setMenuOpen(false)} />
         ) : (
