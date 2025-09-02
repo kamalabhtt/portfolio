@@ -4,6 +4,7 @@ import React from "react";
 import ecommerceImg from "../../assets/e-commerce.png";
 import portfolioImg from "../../assets/portfolio.png";
 import taskmanagerImg from "../../assets/library.jpg";
+import websitedesignImg from "../../assets/web.png";
 
 const projects = [
   {
@@ -31,6 +32,15 @@ const projects = [
     demo: "https://library-demo.com",
     source: "https://github.com/kamalabhtt/lms",
     image: taskmanagerImg
+
+  },
+  {
+    title: "website design",
+    desc: "Design only frontend using JavaScript, HTML, and CSS.",
+    tech: [ "JavaScript", "HTML", "CSS"],
+    demo: "https://kamalabhtt.github.io/website-design/",
+    source: "https://github.com/kamalabhtt/website-design",
+    image: websitedesignImg
 
   }
 ];
